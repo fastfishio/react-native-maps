@@ -3,12 +3,12 @@ package com.airbnb.android.react.maps;
 import android.content.Context;
 import android.util.Log;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.TileOverlay;
-import com.google.android.gms.maps.model.TileOverlayOptions;
 import com.google.maps.android.heatmaps.HeatmapTileProvider;
 import com.google.maps.android.heatmaps.WeightedLatLng;
 import com.google.maps.android.heatmaps.Gradient;
+import com.huawei.hms.maps.HuaweiMap;
+import com.huawei.hms.maps.model.TileOverlay;
+import com.huawei.hms.maps.model.TileOverlayOptions;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +31,7 @@ public class AirMapHeatmap extends AirMapFeature {
     public void setPoints(WeightedLatLng[] points) {
         this.points = Arrays.asList(points);
         if (heatmapTileProvider != null) {
-            heatmapTileProvider.setWeightedData(this.points);
+//            heatmapTileProvider.setWeightedData(this.points);
         }
         if (heatmap != null) {
             heatmap.clearTileCache();
@@ -41,7 +41,7 @@ public class AirMapHeatmap extends AirMapFeature {
     public void setGradient(Gradient gradient) {
         this.gradient = gradient;
         if (heatmapTileProvider != null) {
-            heatmapTileProvider.setGradient(gradient);
+//            heatmapTileProvider.setGradient(gradient);
         }
         if (heatmap != null) {
             heatmap.clearTileCache();
@@ -51,7 +51,7 @@ public class AirMapHeatmap extends AirMapFeature {
     public void setOpacity(double opacity) {
         this.opacity = new Double(opacity);
         if (heatmapTileProvider != null) {
-            heatmapTileProvider.setOpacity(opacity);
+//            heatmapTileProvider.setOpacity(opacity);
         }
         if (heatmap != null) {
             heatmap.clearTileCache();
@@ -61,7 +61,7 @@ public class AirMapHeatmap extends AirMapFeature {
     public void setRadius(int radius) {
         this.radius = new Integer(radius);
         if (heatmapTileProvider != null) {
-            heatmapTileProvider.setRadius(radius);
+//            heatmapTileProvider.setRadius(radius);
         }
         if (heatmap != null) {
             heatmap.clearTileCache();
@@ -91,7 +91,7 @@ public class AirMapHeatmap extends AirMapFeature {
             }
             heatmapTileProvider = builder.build();
         }
-        options.tileProvider(heatmapTileProvider);
+//        options.tileProvider(heatmapTileProvider);
         return options;
     }
 
@@ -101,13 +101,13 @@ public class AirMapHeatmap extends AirMapFeature {
     }
 
     @Override
-    public void addToMap(GoogleMap map) {
+    public void addToMap(HuaweiMap map) {
         Log.d("AirMapHeatmap", "ADD TO MAP");
         heatmap = map.addTileOverlay(getHeatmapOptions());
     }
 
     @Override
-    public void removeFromMap(GoogleMap map) {
+    public void removeFromMap(HuaweiMap map) {
         heatmap.remove();
     }
 

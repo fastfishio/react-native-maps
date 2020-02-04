@@ -1,0 +1,12 @@
+{
+	"client":{
+		"cp_id":"890971000000000085",
+		"product_id":"9105385871708445709",
+		"client_id":"289847208746943488",
+		"client_secret":"ED91E58EB9B91BBE7CFCA4190F63E2FB3D79C4ED78E05891BC473E6C60FE0926",
+		"app_id":"101689573",
+		"package_name":"com.airbnb.android.react.maps.example",
+		"api_key":"CV5hBRM/pktGIgOw3Mfc4o/x3na1TAtx++Mbtpyi6fz30LPsqzYsDN3HSnf9hRpUYgUtx13yoFYCzda6OXl1Rh1qctWu"
+	},
+	"configuration_version":"1.0"
+}

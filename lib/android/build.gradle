@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.huawei.agconnect'
 if (project.hasProperty('POM_ARTIFACT_ID')) {
   apply from: 'gradle-maven-push.gradle'
 }
@@ -25,6 +26,6 @@ dependencies {
     exclude group: 'com.android.support'
   }
   implementation "com.google.android.gms:play-services-base:${safeExtGet('playServicesVersion', '16.1.0')}"
-  implementation "com.google.android.gms:play-services-maps:${safeExtGet('playServicesVersion', '16.1.0')}"
+  implementation 'com.huawei.hms:maps:4.0.0.301'
   implementation 'com.google.maps.android:android-maps-utils:0.5'
 }

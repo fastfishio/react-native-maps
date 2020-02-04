@@ -6,7 +6,7 @@ import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 
-import com.google.android.gms.maps.model.LatLng;
+import com.huawei.hms.maps.model.LatLng;
 import com.google.maps.android.heatmaps.WeightedLatLng;
 import com.google.maps.android.heatmaps.Gradient;
 
@@ -28,12 +28,12 @@ public class AirMapHeatmapManager extends ViewGroupManager<AirMapHeatmap> {
         WeightedLatLng[] p = new WeightedLatLng[points.size()];
         for (int i = 0; i < points.size(); i++) {
             ReadableMap point = points.getMap(i);
-            WeightedLatLng weightedLatLng;
+            WeightedLatLng weightedLatLng = null;
             LatLng latLng = new LatLng(point.getDouble("latitude"), point.getDouble("longitude"));
             if (point.hasKey("weight")) {
-                weightedLatLng = new WeightedLatLng(latLng, point.getDouble("weight"));
+//                weightedLatLng = new WeightedLatLng(latLng, point.getDouble("weight"));
             } else {
-                weightedLatLng = new WeightedLatLng(latLng);
+//                weightedLatLng = new WeightedLatLng(latLng);
             }
             p[i] = weightedLatLng;
         }
