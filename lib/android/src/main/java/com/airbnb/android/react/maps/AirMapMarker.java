@@ -294,8 +294,11 @@ public class AirMapMarker extends AirMapFeature {
       // No more updates for this, as it's a simple icon
       hasViewChanges = false;
     }
+
     if (marker != null) {
-      marker.setIcon(getIcon());
+      BitmapDescriptor icon = getIcon();
+      if(icon != null)
+        marker.setIcon(icon);
     }
   }
 
