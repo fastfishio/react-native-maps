@@ -452,7 +452,7 @@ public class AirMapMarker extends AirMapFeature {
     if (marker == null) {
       return;
     }
-    marker.remove();
+//    marker.remove();
     marker = null;
     updateTracksViewChanges();
   }
