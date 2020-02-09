@@ -444,7 +444,10 @@ public class AirMapView extends MapView implements HuaweiMap.InfoWindowAdapter,
       onPause();
       paused = true;
     }
-    onDestroy();
+    if(!destroyed) {
+      onDestroy();
+      destroyed = true;
+    }
   }
 
   public void setInitialRegion(ReadableMap initialRegion) {
