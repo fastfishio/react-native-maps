@@ -783,7 +783,7 @@ public class AirMapView extends MapView implements HuaweiMap.InfoWindowAdapter,
 
   public void animateToRegion(LatLngBounds bounds, int duration) {
     if (map == null) return;
-    map.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 0), duration, null);
+    map.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 0));
   }
 
   public void animateToViewingAngle(float angle, int duration) {
