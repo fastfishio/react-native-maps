@@ -215,7 +215,7 @@ public class AirMapView extends MapView implements HuaweiMap.InfoWindowAdapter,
     this.map.setOnMarkerDragListener(this);
     this.map.setOnPoiClickListener(this);
     this.map.setOnIndoorStateChangeListener(this);
-
+    this.map.getUiSettings().setMyLocationButtonEnabled(false);
     manager.pushEvent(context, this, "onMapReady", new WritableNativeMap());
 
     final AirMapView view = this;
