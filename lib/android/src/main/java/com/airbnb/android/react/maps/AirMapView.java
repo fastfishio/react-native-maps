@@ -1285,10 +1285,12 @@ public class AirMapView extends MapView implements HuaweiMap.InfoWindowAdapter,
       if(null == marker.getTitle()) {
         marker.setTitle("");
       }
-      if (entryMarker.getKey().getPosition().equals(marker.getPosition())
-          && entryMarker.getKey().getTitle().equals(marker.getTitle())) {
-        airMarker = entryMarker.getValue();
-        break;
+      if(entryMarker.getKey().getPosition() != null && entryMarker.getKey().getTitle() != null) {
+        if (entryMarker.getKey().getPosition().equals(marker.getPosition())
+                && entryMarker.getKey().getTitle().equals(marker.getTitle())) {
+          airMarker = entryMarker.getValue();
+          break;
+        }
       }
     }
 
